@@ -1,0 +1,31 @@
+.leaflet-container {
+	background-color: "lightblue";
+}
+.map-header {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.country-selector {
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.container {
+	display: flex;
+	height: 80vh; /* Set the desired height */
+}
+
+.side-panel-container {
+	position: relative;
+	flex: 0 0 500px; /* Set the width of the sidebar */
+	width: 500px; /* Set the desired width for the side panel */
+	overflow: auto; /* Enable scrolling if content overflows */
+	z-index: 1000;
+	margin-right: 5px;
+}
+
+.map {
+	flex: 1; /* Take remaining space */
+	position: relative;
+}
