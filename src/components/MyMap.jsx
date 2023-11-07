@@ -74,11 +74,7 @@ function MyMap() {
 				if (emission === undefined) {
 					layer
 						.bindPopup(
-							countryName +
-								"(" +
-								countryISO3 +
-								")<br/>" +
-								"⚠️ Unavailable country data"
+							`${countryName} (${countryISO3}) <br/>⚠️ Unavailable country data`
 						)
 						.openPopup();
 				} else {
