@@ -87,31 +87,19 @@ function MyMap() {
 				}
 				layer
 					.bindPopup(
-						countryName +
-							"(" +
-							countryISO3 +
-							")" +
-							"<br />" +
-							"region: " +
-							emission.properties.emission.region +
-							"<br />" +
-							"Lat: " +
-							event.latlng.lat.toFixed(5) +
-							", " +
-							"Long: " +
-							event.latlng.lng.toFixed(5) +
-							"<br />" +
-							"emissions: " +
-							emission.properties.emission.emissions +
-							"<br />" +
-							"base year: " +
-							emission.properties.emission.baseYear +
-							"<br />" +
-							"type: " +
-							emission.properties.emission.type +
-							"<br />" +
-							"source: " +
+						`${countryName}	(${countryISO3})<br />region: ${
+							emission.properties.emission.region
+						}<br />
+							Lat: ${event.latlng.lat.toFixed(5)}, Long: ${event.latlng.lng.toFixed(
+							5
+						)} <br />emissions: ${
+							emission.properties.emission.emissions
+						}<br />base year: ${
+							emission.properties.emission.baseYear
+						} <br />type: 
+							${emission.properties.emission.type}<br />source: ${
 							emission.properties.emission.source
+						}`
 					)
 					.openPopup();
 			},
@@ -135,11 +123,11 @@ function MyMap() {
 				textAlign: "center",
 			}}
 		>
-			<div className="map-header">
+			<div className='map-header'>
 				<h1 style={{ color: "#38403A" }}>MY MAP</h1>
 				<select
-					className="country-selector"
-					name="countryPicker"
+					className='country-selector'
+					name='countryPicker'
 					value={pickedCountry ? pickedCountry.properties.ADMIN : ""}
 					onChange={handleCountryPicker}
 				>
@@ -148,7 +136,7 @@ function MyMap() {
 						return (
 							<option
 								key={idx}
-								className="country-option"
+								className='country-option'
 								value={item.properties.ADMIN}
 							>
 								{item.properties.ADMIN}
@@ -158,7 +146,7 @@ function MyMap() {
 				</select>
 				{showSidePanel && (
 					<button
-						className="side-panel"
+						className='side-panel'
 						style={{
 							border: "1px solid #38403A",
 							borderRadius: "100%",
@@ -178,13 +166,13 @@ function MyMap() {
 					</button>
 				)}
 			</div>
-			<div className="container">
+			<div className='container'>
 				{showSidePanel && (
-					<div className="side-panel-container">
+					<div className='side-panel-container'>
 						<SidePanel data={pickedCountry} />
 					</div>
 				)}
-				<div className="map">
+				<div className='map'>
 					<MapContainer
 						style={{ height: "80vh" }}
 						zoom={2}
